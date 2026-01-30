@@ -17,16 +17,6 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     checkAppState();
   }, []);
-  const isGithubPages = window.location.hostname.includes("github.io");
-
-    if (isGithubPages) {
-      setAppPublicSettings({ id: "demo", public_settings: {} });
-      setUser({ id: "demo-user", name: "Jaime Vitor" });
-      setIsAuthenticated(true);
-      setIsLoadingPublicSettings(false);
-      setIsLoadingAuth(false);
-      return;
-    }
   
   const checkAppState = async () => {
     try {
@@ -163,4 +153,5 @@ export const useAuth = () => {
   }
   return context;
 };
+
 
